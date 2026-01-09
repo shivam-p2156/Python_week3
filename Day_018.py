@@ -1,0 +1,54 @@
+# Day 18 ---------------------->>>>>
+
+# ------------------ File Handling ------------------
+
+# write
+
+s = open('myfile.txt','w')
+print(s.write("Hello World"))
+s.close()
+
+# read
+
+f = open('myfile.txt', 'r')
+line = f.readline()
+print(line)
+
+# append
+
+f = open('myfile.txt', 'a')
+f.write('Hello, world!')
+
+
+# seek() function
+
+with open('myfile.txt', 'r') as f:
+  # Move to the 10th byte in the file
+  f.seek(5)
+
+  # Read the next 5 bytes
+  data = f.read(5)
+print(data)
+
+
+
+#  tell() function
+
+with open('file.txt', 'r') as f:
+  # Read the first 10 bytes
+  data = f.read(10)
+
+  # Save the current position
+  current_position = f.tell()
+
+  # Seek to the saved position
+  f.seek(current_position)
+
+# truncate() function
+
+with open('sample.txt', 'w') as f:
+  f.write('Hello World!')
+  f.truncate(5)
+
+with open('sample.txt', 'r') as f:
+  print(f.read())
